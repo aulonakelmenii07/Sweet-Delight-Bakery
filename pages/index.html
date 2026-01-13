@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Sweet Delight Bakery</title>
+
+    <!-- META PROFESIONALE (SHTESË) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sweet Delight Bakery – Fresh pastries made with love every day.">
+    <meta name="keywords" content="bakery, pastries, croissant, macarons, desserts">
+    <meta name="author" content="Sweet Delight Bakery">
+
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 
-<!-- <header>
-    <h1>Sweet Delights 🥐</h1>
-    <p>Freshly Baked Pastries Every Day</p>
-</header> -->
-
 <nav class="navbar">
     <div class="logo">Sweet Delight</div> 
-
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <ul class="nav-links" id="navLinks">
@@ -25,38 +26,49 @@
     </ul>
 </nav>
 
-<section id="home" class="hero">
+<section id="home" class="hero fade-in">
     <h2>Heavenly Pastries Made with Love</h2>
     <p>Experience the taste of perfection</p>
 </section>
 
-<section id="menu">
-    <h2>Signature</h2> <br><br>
+<section id="menu" class="fade-in">
+    <h2>Signature</h2><br><br>
+
     <div class="menu-container">
         <div class="card">
-            <a href="menu.html"><img src="../images/croissant.jpg"></a> <br> <br>
+            <a href="menu.html">
+                <img src="../images/croissant.jpg" alt="Fresh buttery croissant">
+            </a><br><br>
             <h3>Croissant</h3>
             <p>Flaky, buttery layers baked to perfection, filled with rich, melted chocolate  the perfect morning treat or afternoon indulgence.</p>
-            <button onclick="addToCart('Croissant')">Add to Cart</button>
+            <button>Add to Cart</button>
         </div>
+
         <div class="card">
-             <a href="chocolateeclera.html"><img src="../images/eclair.jpg"></a> <br> <br>
+            <a href="chocolateeclera.html">
+                <img src="../images/eclair.jpg" alt="Chocolate éclair">
+            </a><br><br>
             <h3>Chocolate Éclair</h3>
             <p>The chocolate éclair is a light, airy pastry filled with creamy custard and topped with rich, glossy chocolate a perfect bite of indulgence.</p>
-            <button onclick="addToCart('Chocolate Éclair')">Add to Cart</button>
+            <button>Add to Cart</button>
         </div>
+
         <div class="card">
-             <a href="StrawberryTart.html"><img src="../images/tart.jpg"></a> <br> <br>
+            <a href="StrawberryTart.html">
+                <img src="../images/tart.jpg" alt="Strawberry tart">
+            </a><br><br>
             <h3>Strawberry Tart</h3>
             <p>The strawberry tart is a crisp pastry filled with smooth cream and topped with fresh, juicy strawberries a fresh and sweet bite of delight.</p>
-            <button onclick="addToCart('Strawberry Tart')">Add to Cart</button>
+            <button>Add to Cart</button>
         </div>
     </div><br>
+
     <button class="more"><a href="pastries.html">View More</a></button>
 </section>
 
-<section id="about">
-    <h2>About Us</h2> <br>
+<!-- ABOUT US – SHKRIMI YT + FOTO MBETEN -->
+<section id="about" class="fade-in">
+    <h2>About Us</h2><br>
     <div class="aboutus">
         <p>
             At Sweet Delight Bakery, we believe that every moment deserves something sweet. 
@@ -64,7 +76,7 @@
             enjoy freshly made treats crafted with love and care. From the very beginning, we have focused on 
             using high-quality ingredients, traditional recipes, and a touch of creativity to bring you flavors 
             that feel both comforting and exciting. Every bread, cake, and pastry that comes out of our oven is 
-            prepared fresh each day, ensuring the perfect balance of taste, texture, and aroma. <br>
+            prepared fresh each day, ensuring the perfect balance of taste, texture, and aroma. <br><br>
 
             What truly sets Sweet Delight Bakery apart is our dedication to our customers and our community. 
             We are more than just a bakery—we are a warm and welcoming space where friends meet, families 
@@ -74,41 +86,71 @@
             friendly service, and commitment to excellence, because for us, baking is not just a job
             it’s an art and a joy we love to share with everyone who walks through our doors.
         </p>
-        <img src="../images/bakery.png">
+        <img src="../images/bakery.png" alt="Sweet Delight Bakery">
     </div>
 </section>
 
-<div class="macarons">
+<!-- MACARONS – NUK ËSHTË HEQUR -->
+<div class="macarons fade-in">
     <div class="macaronsContainer">
-        <img src="../images/bg.png">
+        <img src="../images/bg.png" alt="Macarons">
         <div class="macaronsContent">
             <h2>We Love Macarons</h2>
             <h4>Discover Our Macarons Story!</h4><br><br>
-            <p>In the early morning glow of the bakery, trays of macarons cooled on marble 
+            <p>
+                In the early morning glow of the bakery, trays of macarons cooled on marble 
                 counters, their pastel shells shining like tiny jewels. Soft pinks, sunny 
                 yellows, and pale greens promised flavors both gentle and rich. Each macaron 
                 cracked lightly at the first bite, giving way to a smooth, creamy center that 
-                melted slowly, as if it wanted to be remembered. Customers lingered over them, 
-                savoring the balance of sweetness and texture, knowing these small desserts 
-                carried hours of careful folding, waiting, and patience. In that quiet moment, 
-                the macarons became more than pastries—they were the bakery’s way of turning 
-                ordinary mornings into something special.</p><br><br>
-                <a href="macarons.html" style="text-decoration: none;"><button style="padding: 15px 20px;">Read More</button></a>
+                melted slowly, as if it wanted to be remembered.
+            </p><br><br>
+            <a href="macarons.html" style="text-decoration: none;">
+                <button style="padding: 15px 20px;">Read More</button>
+            </a>
         </div>
     </div>
 </div>
 
-<div class="applepie">
+<!-- APPLE PIE – NUK ËSHTË HEQUR -->
+<div class="applepie fade-in">
     <div class="pieContainer">
         <div class="pieContent">
             <h2>Holiday Collection</h2>
             <h3>20% OFF</h3><br><br>
             <p>Only Today</p>
         </div>
-        <img src="../images/applepiee.jpg">
+        <img src="../images/applepiee.jpg" alt="Apple pie">
     </div>
 </div>
 
+<!-- TESTIMONIALS – SHTESË -->
+<section id="testimonials" class="fade-in">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <p>"The croissants are absolutely amazing!"</p>
+            <h4>– Emma L.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Everything tastes fresh and homemade."</p>
+            <h4>– Daniel K.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Best bakery experience ever."</p>
+            <h4>– Sophia M.</h4>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER – SHTESË -->
+<section class="newsletter fade-in">
+    <h2>Join Our Sweet Community</h2>
+    <p>Subscribe to receive special offers and bakery news.</p>
+    <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
 
 <section id="contact">
     <h2>Contact Us</h2>
@@ -119,6 +161,8 @@
 <footer>
     <p>© 2026 Sweet Delight Bakery</p>
 </footer>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
 
 <script src="script.js"></script>
 </body>
