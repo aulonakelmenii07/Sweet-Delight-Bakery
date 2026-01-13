@@ -12,7 +12,7 @@
       color: #444;
     }
 
-    /******** NAVBAR ********/
+    
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,6 +20,9 @@
     background: #7b0a0a;
     padding: 15px 25px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: sticky; 
+    top: 0;           
+    z-index: 1000;    
 }
 
 .logo {
@@ -59,6 +62,7 @@
       padding: 40px;
       border-radius: 14px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease; 
     }
 
     .product {
@@ -73,6 +77,11 @@
       width: 100%;
       border-radius: 14px;
       border: 4px solid #f6c1cc;
+      transition: transform 0.3s ease; 
+    }
+
+    .product img:hover {
+      transform: scale(1.05); 
     }
 
     .product-details {
@@ -90,6 +99,13 @@
       color: #e58aa2;
       margin: 15px 0;
       font-weight: bold;
+    }
+
+    
+    .rating {
+      color: #f5b301;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
     .description {
@@ -115,14 +131,24 @@
       transform: translateY(-2px);
     }
 
-    /******** SECTIONS ********/
+    
+    .badge {
+      display: inline-block;
+      background: #e58aa2;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    
 section {
     padding: 40px 20px;
     text-align: center;
 }
 
-
-    /******** FOOTER ********/
+    
 footer {
     background: linear-gradient(90deg, #7b0a0a, #b11226);
     color: white;
@@ -131,15 +157,47 @@ footer {
 }
 
     @media (max-width: 768px) {
+
+      .menu-toggle {
+        display: block; 
+      }
+
+      .nav-links {
+        display: none; 
+        flex-direction: column; 
+        background: #7b0a0a; 
+        position: absolute;
+        top: 65px; 
+        right: 0; 
+        width: 200px;
+        padding: 20px; 
+      }
+
+      .nav-links.active {
+        display: flex; 
+      }
+
       .product {
         text-align: center;
+      }
+    }
+
+    /* ADDED */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
 
-    <nav class="navbar">
+<nav class="navbar">
     <div class="logo">Sweet Delight</div>
 
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -152,41 +210,53 @@ footer {
     </ul>
 </nav>
 
-  <div class="container">
-    <div class="product">
+<div class="container">
+  <div class="product">
 
-      <img src="../images/eclair.jpg" alt="Chocolate Éclair">
+    <img src="../images/eclair.jpg" alt="Chocolate Éclair">
 
-      <div class="product-details">
-        <h1>Chocolate Éclair</h1>
-        <p class="price">$2.00</p>
+    <div class="product-details">
 
-        <p class="description">
-          Here’s a polished, bakery-style paragraph you can use for a product page or menu description:
+      
+      <span class="badge">Best Seller</span>
 
-         Chocolate Éclair
-         Our Chocolate Éclair is a timeless French classic, crafted to perfection with light and 
-         airy choux pastry baked until golden. Each éclair is generously filled with smooth, velvety 
-         vanilla custard that melts in your mouth, then topped with a rich, glossy layer of premium 
-         chocolate ganache. The perfect balance of delicate pastry, creamy filling, and deep chocolate 
-         flavor makes this elegant dessert an irresistible treat for any moment of indulgence.
-        </p>
+      <h1>Chocolate Éclair</h1>
 
-        <a href="#" class="btn">Order Now</a>
-      </div>
+    
+      <div class="rating">★★★★★ (4.9)</div>
 
+      <p class="price">$2.00</p>
+
+      <p class="description">
+        Our Chocolate Éclair is a timeless French classic, crafted to perfection with light and 
+        airy choux pastry baked until golden. Each éclair is generously filled with smooth, velvety 
+        vanilla custard that melts in your mouth, then topped with a rich, glossy layer of premium 
+        chocolate ganache. The perfect balance of delicate pastry, creamy filling, and deep chocolate 
+        flavor makes this elegant dessert an irresistible treat for any moment of indulgence.
+      </p>
+
+      <a href="#" class="btn">Order Now</a>
     </div>
-  </div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: aulonakelmendi97@gmail.com</p>
-    <p>Phone: +383 49 401 813</p>
+  </div>
+</div>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: aulonakelmendi97@gmail.com</p>
+  <p>Phone: +383 49 401 813</p>
 </section>
 
 <footer>
-    <p>© 2026 Sweet Delight Bakery</p>
+  <p>© 2026 Sweet Delight Bakery</p>
 </footer>
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
