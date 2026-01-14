@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> StrawberryTart | Sweet Delight Bakery</title>
+  <title>Strawberry Tart | Sweet Delight Bakery</title>
 
   <style>
     body {
@@ -12,58 +12,50 @@
       color: #444;
     }
 
-    /******** NAVBAR ********/
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #7b0a0a;
-    padding: 15px 25px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #7b0a0a;
+      padding: 15px 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
 
-.logo {
-    color: #fdf0f0;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: Brush Script MT;
-}
+    .logo {
+      color: #fdf0f0;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: Brush Script MT;
+    }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-.nav-links li a {
-    color: #fdf0f0;
-    text-decoration: none;
-    font-family: Arial;
-}
+    .nav-links li a {
+      color: #fdf0f0;
+      text-decoration: none;
+      font-family: Arial;
+    }
 
-.nav-links li a:hover {
-    color: #ffd6d6;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: #fdf0f0;
-    cursor: pointer;
-}
+    .nav-links li a:hover {
+      color: #ffd6d6;
+    }
 
     .container {
       max-width: 1100px;
       margin: 50px auto;
       background: #ffffff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 45px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
 
     .product {
       display: flex;
-      gap: 40px;
+      gap: 45px;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -71,8 +63,9 @@
     .product img {
       max-width: 420px;
       width: 100%;
-      border-radius: 14px;
-      border: 4px solid #f6c1cc;
+      border-radius: 18px;
+      border: 5px solid #f6c1cc;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
     }
 
     .product-details {
@@ -80,15 +73,15 @@
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 38px;
       color: #6bb7b7;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .price {
       font-size: 24px;
       color: #e58aa2;
-      margin: 15px 0;
+      margin: 12px 0 20px;
       font-weight: bold;
     }
 
@@ -98,37 +91,88 @@
       color: #555;
     }
 
+    .ingredients-box {
+      margin-top: 30px;
+      background: #fff0f4;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+
+    .ingredients-box h3 {
+      margin-bottom: 15px;
+      color: #7b0a0a;
+    }
+
+    .ingredients-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ingredients-box li::before {
+      content: "🍓 ";
+    }
+
+    .feedback {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .feedback button {
+      padding: 12px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      background: #6bb7b7;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .feedback button:hover {
+      background: #559e9e;
+      transform: translateY(-2px);
+    }
+
+    .feedback-message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #7b0a0a;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 32px;
-      background-color: #6bb7b7;
+      margin-top: 30px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #6bb7b7, #559e9e);
       color: #ffffff;
       text-decoration: none;
       border-radius: 30px;
       font-size: 16px;
-      transition: 0.3s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
     }
 
-    .btn:hover {
-      background-color: #559e9e;
-      transform: translateY(-2px);
+    
+    #cart-msg {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #7b0a0a;
+      display: none;
     }
 
-    /******** SECTIONS ********/
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-
-    /******** FOOTER ********/
-footer {
-    background: linear-gradient(90deg, #7b0a0a, #b11226);
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+    footer {
+      background: linear-gradient(90deg, #7b0a0a, #b11226);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
 
     @media (max-width: 768px) {
       .product {
@@ -139,52 +183,82 @@ footer {
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">Sweet Delight</div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pastries.html">Menu</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="logo">Sweet Delight</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pastries.html">Menu</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-  <div class="container">
-    <div class="product">
+<div class="container">
+  <div class="product">
 
-      <img src="../images/tart.jpg" alt="Strawberry Tart">
+    <img src="../images/tart.jpg" alt="Strawberry Tart">
 
-      <div class="product-details">
-        <h1>Strawberry Tart</h1>
-        <p class="price">$3.00</p>
+    <div class="product-details">
+      <h1>Strawberry Tart</h1>
+      <p class="price">$3.00</p>
 
-        <p class="description">
-          Our Strawberry Tart is a delightful blend of freshness and elegance,
-           made with a crisp, buttery tart shell baked to a perfect golden finish. 
-           It is filled with a smooth, creamy vanilla custard and topped with layers of juicy, 
-           hand-selected strawberries that add a natural sweetness and vibrant color. 
-           Finished with a light glaze for a beautiful shine, this classic dessert offers the perfect 
-           balance of crunchy, creamy, and fruity flavors in every bite.
-        </p>
+      <p class="description">
+        A delicate tart with buttery crust, smooth vanilla custard and fresh strawberries,
+        crafted for a perfectly balanced dessert experience.
+      </p>
 
-        <a href="#" class="btn">Order Now</a>
+      <div class="ingredients-box">
+        <h3>What it contains</h3>
+        <ul>
+          <li>Fresh strawberries</li>
+          <li>Buttery tart crust</li>
+          <li>Vanilla custard</li>
+          <li>Milk & eggs</li>
+          <li>Natural vanilla</li>
+        </ul>
       </div>
+
+      <div class="feedback">
+        <p>Did you like this dessert?</p>
+        <button onclick="like()">👍 Like</button>
+        <button onclick="dislike()">👎 Dislike</button>
+        <div id="feedbackMessage" class="feedback-message"></div>
+      </div>
+
+      
+      <a href="#" class="btn" onclick="addToCart(event)">Order Now</a>
+      <div id="cart-msg">In the cart – Enjoy ❤️</div>
 
     </div>
   </div>
+</div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: aulonakelmendi97@gmail.com</p>
-    <p>Phone: +383 49 401 813</p>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: aulonakelmendi97@gmail.com</p>
+  <p>Phone: +383 49 401 813</p>
 </section>
 
 <footer>
-    <p>© 2026 Sweet Delight Bakery</p>
+  <p>© 2026 Sweet Delight Bakery</p>
 </footer>
+
+<script>
+  function like() {
+    document.getElementById("feedbackMessage").innerText =
+      "Thank you! We're happy you liked it 💖";
+  }
+
+  function dislike() {
+    document.getElementById("feedbackMessage").innerText =
+      "Thank you for your feedback! We'll improve 😊";
+  }
+
+  function addToCart(event) {
+    event.preventDefault();
+    document.getElementById("cart-msg").style.display = "block";
+  }
+</script>
 
 </body>
 </html>

@@ -12,7 +12,6 @@
       color: #444;
     }
 
-    /******** NAVBAR ********/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,6 +19,9 @@
     background: #7b0a0a;
     padding: 15px 25px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -27,6 +29,7 @@
     font-size: 22px;
     font-weight: bold;
     font-family: Brush Script MT;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -39,10 +42,26 @@
     color: #fdf0f0;
     text-decoration: none;
     font-family: Arial;
+    position: relative; 
 }
 
 .nav-links li a:hover {
     color: #ffd6d6;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: #ffd6d6;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -52,138 +71,226 @@
     cursor: pointer;
 }
 
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease;
+}
 
-    .product {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+.product {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-    .product img {
-      max-width: 420px;
-      width: 100%;
-      border-radius: 14px;
-      border: 4px solid #f6c1cc;
-    }
+.product img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 14px;
+  border: 4px solid #f6c1cc;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    .product-details {
-      flex: 1;
-    }
+.product img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
 
-    h1 {
-      font-size: 36px;
-      color: #6bb7b7;
-      margin-bottom: 10px;
-    }
+.product-details {
+  flex: 1;
+}
 
-    .price {
-      font-size: 24px;
-      color: #e58aa2;
-      margin: 15px 0;
-      font-weight: bold;
-    }
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #888;
+}
 
-    .description {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #555;
-    }
+.breadcrumb a {
+  text-decoration: none;
+  color: #888;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 32px;
-      background-color: #6bb7b7;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 16px;
-      transition: 0.3s ease;
-    }
+h1 {
+  font-size: 36px;
+  color: #6bb7b7;
+  margin-bottom: 10px;
+}
 
-    .btn:hover {
-      background-color: #559e9e;
-      transform: translateY(-2px);
-    }
+.rating {
+  color: #f5b301;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-    /******** SECTIONS ********/
+.price {
+  font-size: 24px;
+  color: #e58aa2;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.info-list {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #666;
+}
+
+.info-list li {
+  margin-bottom: 6px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 32px;
+  background-color: #6bb7b7;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #559e9e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25); 
+}
+
 section {
-    padding: 40px 20px;
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-
-    /******** FOOTER ********/
 footer {
-    background: linear-gradient(90deg, #7b0a0a, #b11226);
-    color: white;
-    text-align: center;
-    padding: 15px;
+  background: linear-gradient(90deg, #7b0a0a, #b11226);
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 
-    @media (max-width: 768px) {
-      .product {
-        text-align: center;
-      }
-    }
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; 
+  }
+
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    background: #7b0a0a;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex; 
+  }
+
+  .product {
+    text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">Sweet Delight</div>
+<nav class="navbar">
+  <div class="logo">Sweet Delight</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pastries.html">Menu</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pastries.html">Menu</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-  <div class="container">
-    <div class="product">
+<div class="container">
+  <div class="product">
 
-      <img src="../images/blueberry.avif" alt="Chocolate Éclair">
+    <img src="../images/blueberry.avif" alt="Blueberry Muffin">
 
-      <div class="product-details">
-        <h1>Blueberry Muffin</h1>
-        <!--Test comment-->
-        <p class="price">$2.00</p>
+    <div class="product-details">
+      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="pastries.html">Menu</a>/ Blueberry Muffin</div>
 
-        <p class="description">
+      <h1>Blueberry Muffin</h1>
+      <div class="rating">★★★★☆ (4.7)</div>
+
+      <p class="price">$2.00</p>
+
+      <p class="description">
         Our blueberry muffin is a soft and fluffy baked treat filled with juicy blueberries
         that add a perfect balance of sweetness and freshness. Made with simple ingredients 
         and baked to golden perfection, it is ideal for breakfast, a quick snack, or a light 
-        dessert. Its rich aroma and moist texture make it a favorite choice for all ages.
-        </p>
+        dessert.
+      </p>
 
-        <a href="#" class="btn">Order Now</a>
-      </div>
+      <ul class="info-list">
+        <li>✔ Freshly baked daily</li>
+        <li>✔ Made with real blueberries</li>
+        <li>✔ Perfect for breakfast & snacks</li>
+      </ul>
 
+      <a href="#" class="btn">Order Now</a>
+
+      
+      <p id="cartMessage" style="display:none; margin-top:15px; color:#7b0a0a; font-weight:bold;">
+        In the cart – Enjoy ❤️
+      </p>
     </div>
   </div>
+</div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: aulonakelmendi97@gmail.com</p>
-    <p>Phone: +383 49 401 813</p>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: aulonakelmendi97@gmail.com</p>
+  <p>Phone: +383 49 401 813</p>
 </section>
 
 <footer>
-    <p>© 2026 Sweet Delight Bakery</p>
+  <p>© 2026 Sweet Delight Bakery</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  const orderBtn = document.querySelector(".btn");
+  const cartMessage = document.getElementById("cartMessage");
+
+  orderBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    cartMessage.style.display = "block";
+  });
+</script>
 
 </body>
 </html>

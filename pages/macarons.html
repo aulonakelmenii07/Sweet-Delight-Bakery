@@ -8,102 +8,97 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background-color: #fff7f9;
-      color: #444;
+      background: linear-gradient(135deg, #fff0f5, #ffe3ea);
+      color: #333;
     }
 
-    /******** NAVBAR ********/
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #7b0a0a;
-    padding: 15px 25px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.logo {
-    color: #fdf0f0;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: Brush Script MT;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #fdf0f0;
-    text-decoration: none;
-    font-family: Arial;
-}
-
-.nav-links li a:hover {
-    color: #ffd6d6;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: #fdf0f0;
-    cursor: pointer;
-}
-
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .product {
+    .navbar {
       display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
+      background: #7b0a0a;
+      padding: 15px 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
-    .product img {
-      max-width: 420px;
+    .logo {
+      color: #fdf0f0;
+      font-size: 22px;
+      font-family: Brush Script MT;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-product {
+      max-width: 1200px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 60px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero-product img {
       width: 100%;
-      border-radius: 14px;
-      border: 4px solid #f6c1cc;
+      border-radius: 30px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+      transform: rotate(-2deg);
+      transition: 0.6s ease;
     }
 
-    .product-details {
-      flex: 1;
+    .hero-product img:hover {
+      transform: rotate(0deg) scale(1.05);
     }
 
-    h1 {
-      font-size: 36px;
-      color: #6bb7b7;
+    .product-info h1 {
+      font-size: 48px;
+      color: #7b0a0a;
       margin-bottom: 10px;
     }
 
     .price {
-      font-size: 24px;
+      font-size: 28px;
       color: #e58aa2;
-      margin: 15px 0;
       font-weight: bold;
+      margin-bottom: 25px;
     }
 
-    .description {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #555;
+    .product-info p {
+      line-height: 1.9;
+      font-size: 17px;
     }
 
+    .signature {
+      margin-top: 30px;
+      padding: 20px 25px;
+      border-left: 5px solid #e58aa2;
+      background: rgba(255,255,255,0.6);
+      border-radius: 15px;
+      font-style: italic;
+    }
+
+    
     .btn {
       display: inline-block;
       margin-top: 25px;
-      padding: 14px 32px;
-      background-color: #6bb7b7;
-      color: #ffffff;
+      padding: 14px 34px;
+      background: #7b0a0a;
+      color: white;
       text-decoration: none;
       border-radius: 30px;
       font-size: 16px;
@@ -111,27 +106,83 @@
     }
 
     .btn:hover {
-      background-color: #559e9e;
+      background: #b11226;
       transform: translateY(-2px);
     }
 
-    /******** SECTIONS ********/
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
+    
+    #cart-msg {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #7b0a0a;
+      font-weight: bold;
+      display: none;
+    }
 
+    .floating-feedback {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      background: white;
+      padding: 18px 22px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      text-align: center;
+      animation: floatIn 1.3s ease;
+    }
 
-    /******** FOOTER ********/
-footer {
-    background: linear-gradient(90deg, #7b0a0a, #b11226);
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+    .floating-feedback p {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
 
-    @media (max-width: 768px) {
-      .product {
+    .floating-feedback button {
+      border: none;
+      background: #7b0a0a;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .floating-feedback button:hover {
+      background: #b11226;
+      transform: translateY(-2px);
+    }
+
+    #fb-msg {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #7b0a0a;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #7b0a0a, #b11226);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-product {
+        grid-template-columns: 1fr;
         text-align: center;
       }
     }
@@ -139,52 +190,73 @@ footer {
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">Sweet Delight</div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pastries.html">Menu</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="logo">Sweet Delight</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pastries.html">Menu</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-  <div class="container">
-    <div class="product">
+<div class="hero-product">
+  <img src="../images/macarons.jpg" alt="Macarons">
 
-      <img src="../images/macarons.jpg" alt="macarons">
+  <div class="product-info">
+    <h1>Macarons</h1>
+    <div class="price">$1.00</div>
 
-      <div class="product-details">
-        <h1>Macarons</h1>
-        <p class="price">$1.00</p>
+    <p>
+      Handcrafted French macarons with a delicate shell and soft center,
+      created to deliver elegance, balance and a refined sweetness
+      in every single bite.
+    </p>
 
-        <p class="description">
-          Our Macarons are delicate, colorful confections that combine a crisp outer shell 
-          with a soft, chewy center, creating a perfect bite every time. Each macaron is 
-          lovingly filled with rich, flavorful ganache, buttercream, or jam, offering a variety 
-          of tastes from fruity and nutty to decadent chocolate. Elegant, light, and irresistibly 
-          sweet, these French treats are perfect for special occasions, gifts, or 
-          simply to indulge in a moment of pure delight
-        </p>
-
-        <a href="#" class="btn">Order Now</a>
-      </div>
-
+    <div class="signature">
+      Crafted with precision, patience and passion – a signature Sweet Delight creation.
     </div>
-  </div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: aulonakelmendi97@gmail.com</p>
-    <p>Phone: +383 49 401 813</p>
+    
+    <a href="#" class="btn" onclick="addToCart(event)">Order Now</a>
+    <div id="cart-msg">In the cart – Enjoy ❤️</div>
+
+  </div>
+</div>
+
+<div class="floating-feedback">
+  <p>Your opinion?</p>
+  <button onclick="like()">👍</button>
+  <button onclick="dislike()">👎</button>
+  <div id="fb-msg"></div>
+</div>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: aulonakelmendi97@gmail.com</p>
+  <p>Phone: +383 49 401 813</p>
 </section>
 
 <footer>
-    <p>© 2026 Sweet Delight Bakery</p>
+  <p>© 2026 Sweet Delight Bakery</p>
 </footer>
 
+<script>
+  function like() {
+    document.getElementById("fb-msg").innerText =
+      "Thanks! We’re happy you loved it 💕";
+  }
+
+  function dislike() {
+    document.getElementById("fb-msg").innerText =
+      "Thanks! Your feedback helps us improve 🌸";
+  }
+
+  function addToCart(event) {
+    event.preventDefault();
+    document.getElementById("cart-msg").style.display = "block";
+  }
+</script>
+
 </body>
-</html>!DOCTYPE html>
+</html>

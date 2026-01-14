@@ -12,45 +12,37 @@
       color: #444;
     }
 
-    /******** NAVBAR ********/
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #7b0a0a;
-    padding: 15px 25px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #7b0a0a;
+      padding: 15px 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
 
-.logo {
-    color: #fdf0f0;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: Brush Script MT;
-}
+    .logo {
+      color: #fdf0f0;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: Brush Script MT;
+    }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-.nav-links li a {
-    color: #fdf0f0;
-    text-decoration: none;
-    font-family: Arial;
-}
+    .nav-links li a {
+      color: #fdf0f0;
+      text-decoration: none;
+      font-family: Arial;
+    }
 
-.nav-links li a:hover {
-    color: #ffd6d6;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: #fdf0f0;
-    cursor: pointer;
-}
+    .nav-links li a:hover {
+      color: #ffd6d6;
+    }
 
     .container {
       max-width: 1100px;
@@ -69,7 +61,7 @@
     }
 
     .product img {
-      max-width: 420px;
+      max-width: 320px;
       width: 100%;
       border-radius: 14px;
       border: 4px solid #f6c1cc;
@@ -98,6 +90,23 @@
       color: #555;
     }
 
+    .highlights {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .highlight {
+      background: #fff0f3;
+      border: 1px solid #f6c1cc;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #7b0a0a;
+      font-weight: 600;
+    }
+
     .btn {
       display: inline-block;
       margin-top: 25px;
@@ -108,6 +117,7 @@
       border-radius: 30px;
       font-size: 16px;
       transition: 0.3s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -115,20 +125,62 @@
       transform: translateY(-2px);
     }
 
-    /******** SECTIONS ********/
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
+    /* ✅ SHTESË – mesazhi i cart-it */
+    .cart-message {
+      margin-top: 12px;
+      font-size: 17px;
+      font-weight: bold;
+      color: #7b0a0a;
+      display: none;
+    }
 
+    .feedback {
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #eee;
+    }
 
-    /******** FOOTER ********/
-footer {
-    background: linear-gradient(90deg, #7b0a0a, #b11226);
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+    .feedback h3 {
+      margin-bottom: 15px;
+      color: #7b0a0a;
+    }
+
+    .feedback-buttons button {
+      padding: 10px 22px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .like {
+      background-color: #6bb7b7;
+      color: white;
+    }
+
+    .dislike {
+      background-color: #e58aa2;
+      color: white;
+    }
+
+    .feedback-buttons button:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #7b0a0a, #b11226);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
 
     @media (max-width: 768px) {
       .product {
@@ -139,53 +191,73 @@ footer {
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">Sweet Delight</div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pastries.html">Menu</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<nav class="navbar">
+  <div class="logo">Sweet Delight</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pastries.html">Menu</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-  <div class="container">
-    <div class="product">
+<div class="container">
+  <div class="product">
 
-      <img src="../images/DanishPastry.jpg" alt="Danish Pastry">
+    <img src="../images/DanishPastry.jpg" alt="Danish Pastry">
 
-      <div class="product-details">
-        <h1>Danish Pastry</h1>
-        <p class="price">$1.50</p>
+    <div class="product-details">
+      <h1>Danish Pastry</h1>
+      <p class="price">$1.50</p>
 
-        <p class="description">
-          Our Danish Pastry is a delicate, flaky masterpiece, crafted from layers of buttery, 
-          tender dough that melt in your mouth. Each pastry is beautifully golden and filled with 
-          a variety of delicious fillings, from fruity jams to rich creams, offering a perfect 
-          balance of sweetness and texture. Light, airy, and irresistibly flavorful, our Danish 
-          Pastries are ideal for breakfast, a sweet snack, or a charming accompaniment to your 
-          coffee or tea.
-        </p>
+      <div class="highlights">
+        <div class="highlight">Freshly Baked</div>
+        <div class="highlight">Buttery Layers</div>
+        <div class="highlight">European Style</div>
+      </div>
 
-        <a href="#" class="btn">Order Now</a>
+      <p class="description">
+        Our Danish Pastry is a delicate, flaky masterpiece, crafted from layers of buttery,
+        tender dough that melt in your mouth. Each pastry is beautifully golden and filled
+        with rich, flavorful fillings for a perfect balance of texture and taste.
+      </p>
+
+      
+      <a href="#" class="btn" onclick="addToCart()">Order Now</a>
+
+      
+      <p id="cartMessage" class="cart-message">
+        In the cart – Enjoy ❤️
+      </p>
+
+      <div class="feedback">
+        <h3>Did you enjoy this pastry?</h3>
+        <div class="feedback-buttons">
+          <button class="like">👍 Yes, I loved it</button>
+          <button class="dislike">👎 Not really</button>
+        </div>
       </div>
 
     </div>
   </div>
+</div>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: aulonakelmendi97@gmail.com</p>
-    <p>Phone: +383 49 401 813</p>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: aulonakelmendi97@gmail.com</p>
+  <p>Phone: +383 49 401 813</p>
 </section>
 
 <footer>
-    <p>© 2026 Sweet Delight Bakery</p>
+  <p>© 2026 Sweet Delight Bakery</p>
 </footer>
 
-</body>
-</html>!DOCTYPE html>
 
+<script>
+  function addToCart() {
+    document.getElementById("cartMessage").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
